@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6" style="background-color: antiquewhite;">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="">Login Url</label>
+                        <input type="text" class="form-control" name="url" value="http://127.0.0.1:8000/account/login/">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Combination Type</label>
+                         <select name="mode" class="form-control">
+                            <option value="1">Int-Mode</option>
+                            <option value="2">Int-Alpha-Mode</option>
+                            <option value="3">Int-Alpha-Symbol-Mode</option>
+                          
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Username</label>
+                        <input type="text" class="form-control" name="username">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Login Url</label>
+                        <select name="try_name" class="form-control">
+                            <option value="100">100</option>
+                            <option value="1000">1000</option>
+                            <option value="10000">10000</option>
+                            <option value="100000">100000</option>
+                            <option value="200000">200000</option>
+                            <option value="400000">400000</option>
+                            <option value="1000000">1000000</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-primary">Find</button>
+                    </div>
+                    
+                </div>
+
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>SNo.</th>
+                        <th>username</th>
+                        <th>password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for i in passwords%}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{i.username}}</td>
+                        <td>{{i.password}}</td>
+                    </tr>
+                    {%endfor%}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{%endblock%}
