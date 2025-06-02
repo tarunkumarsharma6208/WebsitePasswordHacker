@@ -18,7 +18,7 @@ It is designed to help security enthusiasts, students, and developers understand
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/website-password-hacker.git
+git clone https://github.com/tarunkumarsharma6208/WebsitePasswordHacker.git
 cd website-password-hacker
 
 # Create virtual environment and install dependencies
